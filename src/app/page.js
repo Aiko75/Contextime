@@ -60,12 +60,12 @@ export default function Home() {
   }, [checkDataAnime, dataAnime]);
 
   return (
-    <div className="">
+    <>
       {/* <MenuCharacter /> */}
       <AskingCharacter
         dataCharacter={dataAnime}
         checkDataAnime={checkDataAnime}
       />
-    </div>
+    </>
   );
 }

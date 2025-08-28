@@ -1,13 +1,13 @@
 "use client";
 
-import { use, useState } from "react";
+import { useState } from "react";
 
 export default function AskingCharacter({ dataCharacter, checkDataAnime }) {
   const [guess, setGuess] = useState(false);
   const [firstTimeGuess, setFirstTimeGuess] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const handleCheck = () => {
-    if (inputValue.toLowerCase() === dataCharacter.name.toLowerCase()) {
+    if (inputValue?.toLowerCase() === dataCharacter.title.toLowerCase()) {
       setGuess(true);
       setFirstTimeGuess(true);
     } else {
@@ -18,19 +18,19 @@ export default function AskingCharacter({ dataCharacter, checkDataAnime }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-[400px] w-full p-6 bg-gray-50 rounded-xl shadow-lg max-w-xl mx-auto">
       {checkDataAnime ? (
-        <div>Data is available</div>
+        <div className="mb-2">Data is available</div>
       ) : (
-        <div>No data available</div>
+        <div className="mb-2">No data available</div>
       )}
       {guess ? (
         <div className="flex flex-col items-center bg-white rounded-xl shadow-md p-6 w-full">
           <img
             src={dataCharacter.images.jpg.image_url}
-            alt={dataCharacter.name}
+            alt={dataCharacter.title}
             className="w-32 h-32 object-cover rounded-full mb-4 border-4 border-blue-200 shadow"
           />
           <h1 className="text-2xl font-bold text-blue-700 mb-2 text-center">
-            {dataCharacter.name}
+            {dataCharacter.title}
           </h1>
           <span className="text-green-500 font-semibold">Correct!</span>
         </div>
