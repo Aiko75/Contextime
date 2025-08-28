@@ -16,7 +16,7 @@ export default function AskingCharacter({ dataCharacter, checkDataAnime }) {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] w-full p-6 bg-gray-50 rounded-xl shadow-lg max-w-xl mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-[350px] w-full p-6 bg-gray-50 rounded-xl shadow-lg max-w-xl mx-auto">
       {checkDataAnime ? (
         <div className="mb-2">Data is available</div>
       ) : (
@@ -44,7 +44,7 @@ export default function AskingCharacter({ dataCharacter, checkDataAnime }) {
             className="border border-gray-300 rounded-lg w-full max-w-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Please input character name"
+            placeholder="Please input anime name"
           />
           <button
             className="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors w-fit max-w-md"
